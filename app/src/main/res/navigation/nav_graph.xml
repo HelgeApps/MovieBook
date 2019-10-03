@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.helge.moviebook.ui.search.SearchFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/displayRecentQueries"
+            app:destination="@id/recentFragment" />
+        <action
+            android:id="@+id/displayMovieDetails"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="queryMovie"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.helge.moviebook.ui.recent.RecentFragment"
+        android:label="@string/recent_queries"/>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.helge.moviebook.ui.details.DetailsFragment"
+        android:label="{movieTitle}">
+        <argument
+            android:name="imdbID"
+            app:argType="string" />
+        <argument
+            android:name="movieTitle"
+            app:argType="string" />
+    </fragment>
+</navigation>

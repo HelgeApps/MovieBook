@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress AndroidUnknownAttribute -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="networkState"
+            type="com.helge.moviebook.repository.network.NetworkState" />
+
+        <variable
+            name="holder"
+            type="com.helge.moviebook.ui.search.NetworkStateItemHolder" />
+
+        <import type="com.helge.moviebook.repository.network.Status" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/loading_error"
+            app:visibility="@{networkState.status == Status.FAILED}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/loading_canceled"
+            app:visibility="@{networkState.status == Status.CANCELED}" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:visibility="@{networkState.status == Status.RUNNING}" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:onClickListener="@{(v) -> holder.onRetryClick.invoke()}"
+            android:text="@string/retry"
+            app:visibility="@{networkState.status == Status.FAILED || networkState.status == Status.CANCELED}" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:onClickListener="@{(v) -> holder.onCancelClick.invoke()}"
+            android:text="@string/cancel"
+            app:visibility="@{networkState.status == Status.RUNNING}" />
+
+    </LinearLayout>
+
+</layout>

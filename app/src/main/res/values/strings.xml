@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Book</string>
+    <string name="search_view_hint">Enter movie title</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="recent_queries">Recent Queries</string>
+    <string name="search_tip">Tap search button to enter your movie query.</string>
+    <string name="movies_not_found">Your search did not match any movie.</string>
+    <string name="movie_one">Found %1$d movie</string>
+    <string name="movie_other">Found %1$d movies</string>
+    <string name="loading_error">Loading error.\nCheck your internet connection and try again.</string>
+    <string name="loading_canceled">Loading was canceled</string>
+    <string name="search">Search</string>
+    <string name="poster">Movie poster</string>
+    <string name="released_date">Released %1$s</string>
+    <string name="plot">Plot</string>
+    <string name="crew">Crew</string>
+    <string name="director">Director</string>
+    <string name="actors">Actors</string>
+    <string name="writer">Writer</string>
+    <string name="reception">Reception</string>
+    <string name="recent_queries_empty">You don\'t have any recent queries</string>
+</resources>

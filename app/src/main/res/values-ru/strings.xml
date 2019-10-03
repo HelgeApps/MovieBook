@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Book</string>
+    <string name="search_view_hint">Введите название фильма</string>
+    <string name="retry">Повторить</string>
+    <string name="cancel">Отмена</string>
+    <string name="recent_queries">Последние запросы</string>
+    <string name="search_tip">Нажмите на кнопку поиска для ввода вашего запроса.</string>
+    <string name="movies_not_found">Ваш запрос не соответствует ни одному фильму.</string>
+    <string name="movie_one">Найдено %1$d фильм</string>
+    <string name="movie_other">Найдено %1$d фильмов</string>
+    <string name="loading_error">Ошибка загрузки.\nПроверьте подключение к Интернету и повторите попытку.</string>
+    <string name="loading_canceled">Загрузка была отменена</string>
+    <string name="search">Поиск</string>
+    <string name="poster">Киноплакат</string>
+    <string name="released_date">Выпущено %1$s</string>
+    <string name="plot">Сюжет</string>
+    <string name="crew">Съемочная группа</string>
+    <string name="director">Режиссер</string>
+    <string name="actors">Актеры</string>
+    <string name="writer">Сценарист</string>
+    <string name="reception">Рейтинги</string>
+    <string name="recent_queries_empty">Последние запросы отсутствуют</string>
+</resources>
