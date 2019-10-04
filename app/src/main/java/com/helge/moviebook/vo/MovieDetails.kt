@@ -4,55 +4,55 @@ import com.google.gson.annotations.SerializedName
 
 data class MovieDetails(
     @field:SerializedName("Title")
-    var title: String?,
+    var title: String? = null,
     @field:SerializedName("Year")
-    var year: String?,
+    var year: String? = null,
     @field:SerializedName("Rated")
-    var rated: String?,
+    var rated: String? = null,
     @field:SerializedName("Released")
-    var released: String?,
+    var released: String? = null,
     @field:SerializedName("Runtime")
-    var runtime: String?,
+    var runtime: String? = null,
     @field:SerializedName("Genre")
-    var genre: String?,
+    var genre: String? = null,
     @field:SerializedName("Director")
-    var director: String?,
+    var director: String? = null,
     @field:SerializedName("Writer")
-    var writer: String?,
+    var writer: String? = null,
     @field:SerializedName("Actors")
-    var actors: String?,
+    var actors: String? = null,
     @field:SerializedName("Plot")
-    var plot: String?,
+    var plot: String? = null,
     @field:SerializedName("Language")
-    var language: String?,
+    var language: String? = null,
     @field:SerializedName("Country")
-    var country: String?,
+    var country: String? = null,
     @field:SerializedName("Awards")
-    var awards: String?,
+    var awards: String? = null,
     @field:SerializedName("Poster")
-    var poster: String?,
+    var poster: String? = null,
     @field:SerializedName("Ratings")
-    var ratings: List<MovieRating>?,
+    var ratings: List<MovieRating>? = null,
     @field:SerializedName("Metascore")
-    var metaScore: String?,
+    var metaScore: String? = null,
     @field:SerializedName("imdbRating")
-    var imdbRating: String?,
+    var imdbRating: String? = null,
     @field:SerializedName("imdbVotes")
-    var imdbVotes: String?,
+    var imdbVotes: String? = null,
     @field:SerializedName("imdbID")
-    var imdbID: String?,
+    var imdbID: String? = null,
     @field:SerializedName("Type")
-    var type: String?,
+    var type: String? = null,
     @field:SerializedName("DVD")
-    var dvd: String?,
+    var dvd: String? = null,
     @field:SerializedName("BoxOffice")
-    var boxOffice: String?,
+    var boxOffice: String? = null,
     @field:SerializedName("Production")
-    var production: String?,
+    var production: String? = null,
     @field:SerializedName("Website")
-    var website: String?,
+    var website: String? = null,
     @field:SerializedName("Response")
-    var response: String?
+    var response: String? = null
 )
 
 data class MovieRating(
