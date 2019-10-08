@@ -5,7 +5,6 @@ import com.helge.moviebook.api.OMDbApi
 import com.helge.moviebook.repository.MovieBookRepository
 import com.helge.moviebook.repository.db.RecentDatabase
 import com.helge.moviebook.repository.network.RemoteDataSource
-import com.helge.moviebook.ui.SharedViewModel
 import com.helge.moviebook.ui.details.DetailsViewModel
 import com.helge.moviebook.ui.recent.RecentViewModel
 import com.helge.moviebook.ui.search.SearchViewModel
@@ -26,7 +25,6 @@ class MovieBookApp : Application() {
         viewModel { SearchViewModel(get()) }
         viewModel { DetailsViewModel(get()) }
         viewModel { RecentViewModel(get()) }
-        viewModel { SharedViewModel() }
     }
 
     override fun onCreate() {

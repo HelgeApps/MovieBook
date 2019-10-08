@@ -10,16 +10,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.helge.moviebook.R
-import com.helge.moviebook.ui.SharedViewModel
 import com.helge.moviebook.vo.RecentQuery
 import kotlinx.android.synthetic.main.recent_queries_fragment.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.recyclerview.widget.ItemTouchHelper
 
 class RecentFragment : Fragment() {
     private val viewModel: RecentViewModel by viewModel()
-    private val sharedViewModel: SharedViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -77,10 +74,11 @@ class RecentFragment : Fragment() {
     }
 
     /**
-     * set query into a shared view model and get back to SearchFragment
+     * Get back to SearchFragment to repeat the request
      */
     private fun searchMovie(model: RecentQuery) {
-        sharedViewModel.movieSearchQuery = model.query
-        findNavController().popBackStack()
+        findNavController().navigate(
+            RecentFragmentDirections.doSearchRequest(model.query)
+        )
     }
 }
