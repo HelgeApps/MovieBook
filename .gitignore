@@ -10,3 +10,5 @@
 gradle-wrapper.jar
 /gradlew
 /gradlew.bat
+google-services.json
+*.jks
