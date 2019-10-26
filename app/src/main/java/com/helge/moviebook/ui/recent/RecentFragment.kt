@@ -14,9 +14,12 @@ import com.helge.moviebook.vo.RecentQuery
 import kotlinx.android.synthetic.main.recent_queries_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.recyclerview.widget.ItemTouchHelper
+import com.helge.moviebook.ui.SharedViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class RecentFragment : Fragment() {
     private val viewModel: RecentViewModel by viewModel()
+    private val sharedViewModel: SharedViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,11 +77,10 @@ class RecentFragment : Fragment() {
     }
 
     /**
-     * Get back to SearchFragment to repeat the request
+     * set query into a shared view model and get back to SearchFragment
      */
     private fun searchMovie(model: RecentQuery) {
-        findNavController().navigate(
-            RecentFragmentDirections.doSearchRequest(model.query)
-        )
+        sharedViewModel.movieSearchQuery = model.query
+        findNavController().popBackStack()
     }
 }

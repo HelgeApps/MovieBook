@@ -8,20 +8,21 @@ import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.helge.GlideApp
 import com.helge.moviebook.R
 import com.helge.moviebook.repository.network.Status
+import com.helge.moviebook.ui.SharedViewModel
 import com.helge.moviebook.vo.Movie
 import kotlinx.android.synthetic.main.movies_search_fragment.*
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : Fragment() {
-    private val args: SearchFragmentArgs by navArgs()
     private val viewModel: SearchViewModel by viewModel()
     // shared view model to get a recent query from RecentFragment
+    private val sharedViewModel: SharedViewModel by sharedViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,9 +117,10 @@ class SearchFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
 
         // query passed from SearchFragment
-        args.queryMovie?.let { query ->
+        sharedViewModel.movieSearchQuery?.let { query ->
             searchView.isIconified = false
             searchView.setQuery(query, true)
+            sharedViewModel.movieSearchQuery = null
         }
     }
 
